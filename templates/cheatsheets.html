@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+
+<h2>Web Dev Cheat-Sheets</h2>
+
+<div class="container">
+    {% for sheet in cheatsheets.all %}
+    <div class="container_sheet">
+        <h3>{{sheet.title}}</h3>
+        <p>Category: {{sheet.category}}</p>
+        <a href="{{sheet.cheatsheet.url}}" target="_blank" class="link_pdf">open pdf</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
